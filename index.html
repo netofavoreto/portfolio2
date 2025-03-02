@@ -3,107 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Website with Astronaut</title>
+    <title>Futuristic Space Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <style>
-        /* Estilo Dark Futurista */
+        /* Estilos gerais */
         body {
-            background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
-            color: #fff;
-            font-family: 'Orbitron', sans-serif;
-            text-align: center;
+            margin: 0;
+            padding: 0;
             overflow: hidden;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #1a1a2e, #0f0f0f);
+            color: #fff;
+            height: 100vh;
         }
 
-        /* Adicionando a imagem do astronauta */
-        .astronaut {
+        /* Header */
+        header {
             position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 5;
-            animation: float 5s ease-in-out infinite;
+            top: 20px;
+            width: 100%;
+            text-align: center;
+            font-size: 2rem;
+            z-index: 10;
         }
 
-        /* Efeito de flutuação do astronauta */
-        @keyframes float {
-            0% { transform: translateY(0) translateX(-50%); }
-            50% { transform: translateY(-30px) translateX(-50%); }
-            100% { transform: translateY(0) translateX(-50%); }
-        }
-
-        /* Estilo para as esferas */
+        /* Efeitos de esferas */
         .sphere {
             position: absolute;
             border-radius: 50%;
-            background: linear-gradient(135deg, #ff6b6b, #ff0f7b);
-            animation: moveSphere 8s linear infinite;
-            z-index: 1;
+            background: rgba(0, 255, 255, 0.7);
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+            animation: move 8s infinite linear;
         }
 
-        /* Movimento das esferas */
-        @keyframes moveSphere {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(800px, 800px); }
+        /* Animação das esferas */
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(800px, 800px);
+            }
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 50px;
-            background: rgba(10, 10, 20, 0.9);
-            box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
-            border-radius: 15px;
-            margin: 20px;
+        /* Astronauta */
+        .astronaut {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            animation: moveAstronaut 10s infinite linear;
         }
 
-        /* Botão modo escuro */
-        button {
-            background: #0ff;
-            color: #000;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-            font-size: 1.2em;
-            transition: 0.3s;
-            border-radius: 5px;
-            box-shadow: 0px 0px 10px #0ff;
+        /* Animação do astronauta */
+        @keyframes moveAstronaut {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+            100% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
         }
 
-        button:hover {
-            background: #ff0;
-            box-shadow: 0px 0px 15px #ff0;
+        /* Navegação e botões */
+        nav {
+            position: absolute;
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
         }
 
-        footer {
-            margin-top: 30px;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.8);
-            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+        nav a {
+            color: #0ff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 0 15px;
+            transition: color 0.3s ease;
         }
+
+        nav a:hover {
+            color: #ff0;
+        }
+
+        /* Efeitos de partículas */
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: particleMove 5s infinite linear;
+        }
+
+        /* Animação das partículas */
+        @keyframes particleMove {
+            0% {
+                transform: translate(0, 0);
+            }
+            100% {
+                transform: translate(-100px, -100px);
+            }
+        }
+
     </style>
 </head>
 <body>
+    <!-- Cabeçalho -->
+    <header>
+        <h1>Exploração Espacial - Futurismo Interativo</h1>
+    </header>
 
-    <!-- Astronauta flutuando -->
-    <img src="astronauta.png" alt="Astronauta" class="astronaut">
+    <!-- Navegação -->
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Sobre</a>
+        <a href="#">Contato</a>
+    </nav>
 
-    <!-- Esferas flutuantes -->
-    <div class="sphere" style="width: 60px; height: 60px; top: 20px; left: 200px;"></div>
-    <div class="sphere" style="width: 80px; height: 80px; top: 100px; left: 500px;"></div>
-    <div class="sphere" style="width: 100px; height: 100px; top: 300px; left: 700px;"></div>
-
-    <div class="hero">
-        <h1>Explorando o Futuro</h1>
-        <button onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+    <!-- Imagem do astronauta -->
+    <div class="astronaut">
+        <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/iss057e024308.jpg?itok=JmDWRiPp" alt="Astronauta" width="200">
     </div>
 
-    <footer>
-        <p>Futuristic Website 2025 &copy; Todos os direitos reservados.</p>
-    </footer>
+    <!-- Esferas animadas -->
+    <div class="sphere" style="width: 80px; height: 80px; top: 30%; left: 20%;"></div>
+    <div class="sphere" style="width: 100px; height: 100px; top: 60%; left: 50%;"></div>
+    <div class="sphere" style="width: 120px; height: 120px; top: 10%; left: 80%;"></div>
+
+    <!-- Partículas animadas -->
+    <div class="particle" style="width: 20px; height: 20px; top: 80%; left: 30%;"></div>
+    <div class="particle" style="width: 15px; height: 15px; top: 40%; left: 70%;"></div>
+    <div class="particle" style="width: 25px; height: 25px; top: 20%; left: 40%;"></div>
 
     <script>
-        function toggleDarkMode() {
-            document.body.classList.toggle("dark-mode");
+        // Função para movimentar esferas
+        const spheres = document.querySelectorAll('.sphere');
+        spheres.forEach(sphere => {
+            const randomDirection = Math.random() * 360;
+            sphere.style.animation = `move 8s infinite linear, rotate ${randomDirection}deg`;
+        });
+
+        // Função para atualizar partículas dinamicamente
+        function createParticles() {
+            for (let i = 0; i < 10; i++) {
+                let particle = document.createElement('div');
+                particle.classList.add('particle');
+                particle.style.width = `${Math.random() * 30 + 10}px`;
+                particle.style.height = particle.style.width;
+                particle.style.top = `${Math.random() * 100}%`;
+                particle.style.left = `${Math.random() * 100}%`;
+                document.body.appendChild(particle);
+            }
         }
+        createParticles(); // Cria partículas aleatórias na página
     </script>
 </body>
 </html>
