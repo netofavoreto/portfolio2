@@ -22,3 +22,5 @@ function moverAstronauta() {
         astronauta.style.transform = 'translateX(0)';
     }, 1000);
 }
+const spaceTexture = new THREE.TextureLoader().load('space_background.jpg');
+scene.background = spaceTexture;
