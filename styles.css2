@@ -4,6 +4,22 @@ body {
     color: #fff;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
+    background-image: url('path_to_your_planet_image.jpg'); /* Substitua pelo caminho da sua imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: backgroundEffect 15s infinite alternate;
+}
+
+@keyframes backgroundEffect {
+    0% {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    }
+    50% {
+        background: linear-gradient(135deg, #ff5f6d, #ffc3a0); /* Gradiente quente */
+    }
+    100% {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    }
 }
 
 header {
@@ -11,6 +27,22 @@ header {
     padding: 20px;
     border-bottom: 2px solid #0ff;
     box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    background-image: url('path_to_your_planet_image_header.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: headerEffect 10s infinite alternate;
+}
+
+@keyframes headerEffect {
+    0% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        background: rgba(255, 87, 34, 0.8); /* Tom quente */
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.8);
+    }
 }
 
 nav ul {
@@ -28,10 +60,12 @@ nav a {
     text-decoration: none;
     font-weight: bold;
     transition: 0.3s;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7); /* Efeito de brilho no texto */
 }
 
 nav a:hover {
     color: #ff0;
+    text-shadow: 0px 0px 10px #ff0, 0px 0px 20px #ff0; /* Efeito de glow no hover */
 }
 
 .hero {
@@ -40,6 +74,22 @@ nav a:hover {
     box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
     border-radius: 15px;
     margin: 20px;
+    background-image: url('path_to_your_planet_image_hero.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: heroEffect 12s infinite alternate;
+}
+
+@keyframes heroEffect {
+    0% {
+        background: rgba(10, 10, 20, 0.9);
+    }
+    50% {
+        background: rgba(255, 87, 34, 0.9); /* Gradiente quente */
+    }
+    100% {
+        background: rgba(10, 10, 20, 0.9);
+    }
 }
 
 button {
@@ -52,11 +102,22 @@ button {
     transition: 0.3s;
     border-radius: 5px;
     box-shadow: 0px 0px 10px #0ff;
+    background-image: radial-gradient(circle, #ff5f6d, #ffc3a0); /* Gradiente quente no botão */
 }
 
 button:hover {
     background: #ff0;
     box-shadow: 0px 0px 15px #ff0;
+    animation: buttonGlow 1.5s infinite alternate; /* Efeito de brilho no hover */
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0px 0px 5px #ff0;
+    }
+    100% {
+        box-shadow: 0px 0px 15px #ff0;
+    }
 }
 
 .card-container {
@@ -72,11 +133,26 @@ button:hover {
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
     transition: 0.3s;
+    background-image: url('path_to_your_planet_image_card.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
 }
 
 .card:hover {
     transform: scale(1.05);
     box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.7);
+    animation: cardHoverEffect 1s ease-out;
+}
+
+@keyframes cardHoverEffect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.7);
+    }
 }
 
 footer {
