@@ -1,22 +1,48 @@
-/* Reset básico */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+/* Estilo Dark Futurista */
+body {
+    background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    background-image: url('path_to_your_planet_image.jpg'); /* Substitua pelo caminho da sua imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: backgroundEffect 15s infinite alternate;
 }
 
-body {
-    background-color: #f0f0f0;
-    color: #333;
-    text-align: center;
-    transition: background 0.3s, color 0.3s;
+@keyframes backgroundEffect {
+    0% {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    }
+    50% {
+        background: linear-gradient(135deg, #ff5f6d, #ffc3a0); /* Gradiente quente */
+    }
+    100% {
+        background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    }
 }
 
 header {
-    background: #0078D4;
-    color: white;
+    background: rgba(0, 0, 0, 0.8);
     padding: 20px;
+    border-bottom: 2px solid #0ff;
+    box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.5);
+    background-image: url('path_to_your_planet_image_header.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: headerEffect 10s infinite alternate;
+}
+
+@keyframes headerEffect {
+    0% {
+        background: rgba(0, 0, 0, 0.8);
+    }
+    50% {
+        background: rgba(255, 87, 34, 0.8); /* Tom quente */
+    }
+    100% {
+        background: rgba(0, 0, 0, 0.8);
+    }
 }
 
 nav ul {
@@ -29,52 +55,109 @@ nav ul li {
     margin: 0 15px;
 }
 
-nav ul li a {
-    color: white;
+nav a {
+    color: #0ff;
     text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+    text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.7); /* Efeito de brilho no texto */
+}
+
+nav a:hover {
+    color: #ff0;
+    text-shadow: 0px 0px 10px #ff0, 0px 0px 20px #ff0; /* Efeito de glow no hover */
 }
 
 .hero {
-    margin: 50px 0;
+    padding: 50px;
+    background: rgba(10, 10, 20, 0.9);
+    box-shadow: 0px 0px 15px rgba(0, 255, 255, 0.5);
+    border-radius: 15px;
+    margin: 20px;
+    background-image: url('path_to_your_planet_image_hero.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
+    animation: heroEffect 12s infinite alternate;
+}
+
+@keyframes heroEffect {
+    0% {
+        background: rgba(10, 10, 20, 0.9);
+    }
+    50% {
+        background: rgba(255, 87, 34, 0.9); /* Gradiente quente */
+    }
+    100% {
+        background: rgba(10, 10, 20, 0.9);
+    }
 }
 
 button {
+    background: #0ff;
+    color: #000;
     padding: 10px 20px;
-    background: #0078D4;
-    color: white;
     border: none;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
+    font-size: 1.2em;
+    transition: 0.3s;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px #0ff;
+    background-image: radial-gradient(circle, #ff5f6d, #ffc3a0); /* Gradiente quente no botão */
+}
+
+button:hover {
+    background: #ff0;
+    box-shadow: 0px 0px 15px #ff0;
+    animation: buttonGlow 1.5s infinite alternate; /* Efeito de brilho no hover */
+}
+
+@keyframes buttonGlow {
+    0% {
+        box-shadow: 0px 0px 5px #ff0;
+    }
+    100% {
+        box-shadow: 0px 0px 15px #ff0;
+    }
 }
 
 .card-container {
     display: flex;
     justify-content: center;
-    gap: 15px;
-    margin: 20px 0;
+    gap: 20px;
+    padding: 20px;
 }
 
 .card {
-    width: 150px;
-    height: 100px;
-    background: white;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    transition: 0.3s;
+    background-image: url('path_to_your_planet_image_card.jpg'); /* Imagem de planeta */
+    background-size: cover;
+    background-position: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.7);
+    animation: cardHoverEffect 1s ease-out;
+}
+
+@keyframes cardHoverEffect {
+    0% {
+        transform: scale(1);
+        box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
+    }
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.7);
+    }
 }
 
 footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: #0078D4;
-    color: white;
-}
-
-.dark-mode {
-    background-color: #222;
-    color: #fff;
+    margin-top: 30px;
+    padding: 15px;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.5);
 }
