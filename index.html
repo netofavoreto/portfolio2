@@ -3,47 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Futurista - Galáxia</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Página Futurista com Gradientes e Planetas</title>
+    <style>
+        /* Estilo Global */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(135deg, #ff00ff, #00ffff);
+            color: white;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Efeito de movimento de planetas */
+        .planet {
+            position: absolute;
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.8);
+            animation: orbit 15s linear infinite;
+        }
+
+        .planet1 {
+            width: 200px;
+            height: 200px;
+            background: url('https://example.com/planet1.png') no-repeat center;
+            background-size: cover;
+            top: 10%;
+            animation-duration: 20s;
+        }
+
+        .planet2 {
+            width: 250px;
+            height: 250px;
+            background: url('https://example.com/planet2.png') no-repeat center;
+            background-size: cover;
+            top: 50%;
+            animation-duration: 30s;
+        }
+
+        /* Animação de rotação dos planetas */
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(500px) rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg) translateX(500px) rotate(-360deg);
+            }
+        }
+
+        /* Estilo do header */
+        header {
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 20px rgba(0, 255, 255, 0.7);
+            text-align: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        header h1 {
+            font-size: 3em;
+            color: #ff0;
+            text-shadow: 2px 2px 5px rgba(0, 255, 255, 0.8);
+        }
+
+        /* Botões */
+        button {
+            background: #ff0;
+            color: #000;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.5em;
+            cursor: pointer;
+            box-shadow: 0px 0px 10px rgba(0, 255, 255, 0.8);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #ff6600;
+            box-shadow: 0px 0px 20px rgba(255, 255, 0, 0.8);
+        }
+
+        /* Efeito Hero */
+        .hero {
+            background: rgba(10, 10, 30, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+            padding: 40px;
+            text-align: center;
+            margin-top: 50px;
+            width: 80%;
+        }
+
+        .hero h2 {
+            color: #ff00ff;
+            font-size: 2.5em;
+            text-shadow: 1px 1px 10px rgba(255, 0, 255, 0.8);
+        }
+
+        /* Estilo dos Cards */
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 15px;
+            padding: 20px;
+            width: 25%;
+            box-shadow: 0 0 20px rgba(0, 255, 255, 0.7);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 30px rgba(255, 255, 0, 0.7);
+        }
+
+        footer {
+            margin-top: 30px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: #00ffff;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Imagem de Planetas -->
+    <div class="planet planet1"></div>
+    <div class="planet planet2"></div>
+
+    <!-- Header -->
     <header>
-        <h1>Exploração no Espaço</h1>
-        <nav>
-            <ul>
-                <li><a href="#">Início</a></li>
-                <li><a href="#">Sobre</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </nav>
+        <h1>Exploração Espacial Futurista</h1>
     </header>
 
-    <section class="hero">
-        <h2>Viaje pelo Cosmos</h2>
-        <p>Descubra planetas desconhecidos com cores intensas e efeitos vibrantes.</p>
-        <button>Saiba Mais</button>
-    </section>
+    <!-- Seção Hero -->
+    <div class="hero">
+        <h2>Bem-vindo à Navegação no Espaço!</h2>
+        <p>Explore o futuro com efeitos visuais e imagens cósmicas</p>
+        <button>Comece a Viagem</button>
+    </div>
 
-    <section class="card-container">
+    <!-- Cards com Efeitos Visuais -->
+    <div class="card-container">
         <div class="card">
-            <img src="imagens/planeta1.jpg" alt="Planeta 1">
-            <h3>Planeta X</h3>
-            <p>Uma esfera de mistérios e aventuras. Explore as profundezas deste mundo.</p>
+            <h3>Planetas Distantes</h3>
+            <p>Explore os planetas em nosso sistema estelar.</p>
         </div>
         <div class="card">
-            <img src="imagens/planeta2.jpg" alt="Planeta 2">
-            <h3>Planeta Y</h3>
-            <p>Onde a gravidade desafia as leis da física. Aventura a cada segundo!</p>
+            <h3>Estrelas Brilhantes</h3>
+            <p>Descubra estrelas em sua jornada intergaláctica.</p>
         </div>
         <div class="card">
-            <img src="imagens/planeta3.jpg" alt="Planeta 3">
-            <h3>Planeta Z</h3>
-            <p>Um planeta de cores vibrantes, um lugar perfeito para a exploração espacial.</p>
+            <h3>Astronomia Avançada</h3>
+            <p>Aprofunde-se no estudo do universo com tecnologia de ponta.</p>
         </div>
-    </section>
+    </div>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2025 Meu Site Futurista - Todos os direitos reservados.</p>
+        <p>&copy; 2025 Espaço Futurista</p>
     </footer>
+
 </body>
 </html>
