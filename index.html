@@ -18,6 +18,13 @@
             justify-content: space-between;
             align-items: center;
             overflow: hidden;
+            transition: background 0.3s ease, color 0.3s ease; /* Adicionando transição suave */
+        }
+
+        /* Modo Escuro */
+        body.dark-mode {
+            background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+            color: #fff;
         }
 
         /* Efeito de movimento de planetas */
@@ -178,6 +185,16 @@
     <footer>
         <p>&copy; 2025 Espaço Futurista</p>
     </footer>
+
+    <!-- Botão para alternar modo escuro -->
+    <button onclick="toggleDarkMode()">Alternar Modo Escuro</button>
+
+    <script>
+        // Função para alternar entre o modo claro e o modo escuro
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
+        }
+    </script>
 
 </body>
 </html>
