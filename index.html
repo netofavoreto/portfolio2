@@ -3,159 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Futuristic Space Site</title>
+    <title>Astronauta em CSS e JavaScript</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
-    <style>
-        /* Estilos gerais */
-        body {
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(135deg, #1a1a2e, #0f0f0f);
-            color: #fff;
-            height: 100vh;
-        }
-
-        /* Header */
-        header {
-            position: absolute;
-            top: 20px;
-            width: 100%;
-            text-align: center;
-            font-size: 2rem;
-            z-index: 10;
-        }
-
-        /* Efeitos de esferas */
-        .sphere {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(0, 255, 255, 0.7);
-            box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-            animation: move 8s infinite linear;
-        }
-
-        /* Animação das esferas */
-        @keyframes move {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(800px, 800px);
-            }
-        }
-
-        /* Astronauta */
-        .astronaut {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            animation: moveAstronaut 10s infinite linear;
-        }
-
-        /* Animação do astronauta */
-        @keyframes moveAstronaut {
-            0% {
-                transform: translate(-50%, -50%) rotate(0deg);
-            }
-            100% {
-                transform: translate(-50%, -50%) rotate(360deg);
-            }
-        }
-
-        /* Navegação e botões */
-        nav {
-            position: absolute;
-            top: 50px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        nav a {
-            color: #0ff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            margin: 0 15px;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #ff0;
-        }
-
-        /* Efeitos de partículas */
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-            animation: particleMove 5s infinite linear;
-        }
-
-        /* Animação das partículas */
-        @keyframes particleMove {
-            0% {
-                transform: translate(0, 0);
-            }
-            100% {
-                transform: translate(-100px, -100px);
-            }
-        }
-
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Cabeçalho -->
     <header>
-        <h1>Exploração Espacial - Futurismo Interativo</h1>
+        <h1>Exploração Espacial</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Sobre</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <!-- Navegação -->
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Sobre</a>
-        <a href="#">Contato</a>
-    </nav>
+    <div class="hero">
+        <h2>Bem-vindo à exploração galáctica</h2>
+        <p>Aventura, mistério e descobertas em um site futurista.</p>
 
-    <!-- Imagem do astronauta -->
-    <div class="astronaut">
-        <img src="https://www.nasa.gov/sites/default/files/thumbnails/image/iss057e024308.jpg?itok=JmDWRiPp" alt="Astronauta" width="200">
+        <!-- Astronauta em CSS com interatividade -->
+        <div class="astronauta" id="astronauta">
+            <div class="capacete">
+                <div class="visor" id="visor"></div>
+            </div>
+            <div class="corpo">
+                <div class="peito"></div>
+                <div class="abdomen"></div>
+            </div>
+            <div class="braço esquerdo" id="braço-esquerdo"></div>
+            <div class="braço direito" id="braço-direito"></div>
+            <div class="perna esquerda" id="perna-esquerda"></div>
+            <div class="perna direita" id="perna-direita"></div>
+            <div class="botas esquerda" id="botas-esquerda"></div>
+            <div class="botas direita" id="botas-direita"></div>
+        </div>
+
+        <button onclick="mudarCor()">Mudar Cor do Traje</button>
+        <button onclick="moverAstronauta()">Mover Astronauta</button>
     </div>
 
-    <!-- Esferas animadas -->
-    <div class="sphere" style="width: 80px; height: 80px; top: 30%; left: 20%;"></div>
-    <div class="sphere" style="width: 100px; height: 100px; top: 60%; left: 50%;"></div>
-    <div class="sphere" style="width: 120px; height: 120px; top: 10%; left: 80%;"></div>
+    <footer>
+        <p>© 2025 Exploração Espacial. Todos os direitos reservados.</p>
+    </footer>
 
-    <!-- Partículas animadas -->
-    <div class="particle" style="width: 20px; height: 20px; top: 80%; left: 30%;"></div>
-    <div class="particle" style="width: 15px; height: 15px; top: 40%; left: 70%;"></div>
-    <div class="particle" style="width: 25px; height: 25px; top: 20%; left: 40%;"></div>
-
-    <script>
-        // Função para movimentar esferas
-        const spheres = document.querySelectorAll('.sphere');
-        spheres.forEach(sphere => {
-            const randomDirection = Math.random() * 360;
-            sphere.style.animation = `move 8s infinite linear, rotate ${randomDirection}deg`;
-        });
-
-        // Função para atualizar partículas dinamicamente
-        function createParticles() {
-            for (let i = 0; i < 10; i++) {
-                let particle = document.createElement('div');
-                particle.classList.add('particle');
-                particle.style.width = `${Math.random() * 30 + 10}px`;
-                particle.style.height = particle.style.width;
-                particle.style.top = `${Math.random() * 100}%`;
-                particle.style.left = `${Math.random() * 100}%`;
-                document.body.appendChild(particle);
-            }
-        }
-        createParticles(); // Cria partículas aleatórias na página
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
